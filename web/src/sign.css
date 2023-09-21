@@ -1,0 +1,122 @@
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    align-items: center; /* Center vertically */
+  }
+  h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: hsl(128, 49%, 25%);
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .image img {
+    width: 800px;
+    max-width: none; 
+    display: block;
+    height: 712px;
+    background-color: #d2f8d2;
+    background-image: url('./signup.png');
+    background-repeat: no-repeat;
+    display: flex;
+    background-position: center center;
+  }
+  
+  .form-container {
+    background-color: white; 
+    color: rgb(2, 2, 40);
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 720px;
+    height: 710px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; 
+    justify-content: center; 
+  }
+  .formdetails{
+    border: 1px solid white;
+    border-radius: 2rem;
+    margin-top: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    margin-top: 20px;
+  }
+
+ 
+  .input {
+    color: rgb(30, 4, 51);
+    width: 100%;
+    background-color: white;
+    border: 2px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+    font-size: 1.2rem;
+    height: 40px;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+  }
+  
+  .submit-button {
+    color: white;
+    width: 100%;
+    background-color: rgb(48, 10, 95);
+    outline: none;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    width: auto;
+    border-radius: 0.5rem;
+    margin-top: 20px;
+  }
+  
+  .form-header {
+    margin-top: 20px; 
+  }
+
+  .error{
+    color: red;
+    font-weight: bold;
+  }
+
+.position {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; 
+}
+
+.position label {
+  display: flex;
+  align-items: center;
+  cursor: pointer; 
+}
+
+.position input[type="radio"] {
+  margin-right: 5px; 
+}
+
+.position span {
+  font-size: 16px; 
+  user-select: none; 
+}
+
+label1{
+  color: #2019e5;
+  font-weight: bold;
+}
+
+  @media (max-width: 768px) {}
+  
