@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+  
+  .form{
+    background-color: rgb(198, 213, 98);
+    color: rgb(2, 2, 40);
+    text-align: center;
+    gap: 1rem;
+    width: 500px;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+  
+  .input{
+    color: rgb(30, 4, 51);
+    border-radius: 0.5rem;
+    width: 100%;
+    background-color: rgb(173, 204, 115);
+    outline: none;
+    border: none;
+    padding: 0.8rem, 1rem;
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+  
+  .InputLabel{
+    color: #2916b9;
+    font-size: 1.2rem;
+    position: absolute;
+  
+  }
+  
+  input::placeholder{
+    color: rgb(52, 4, 4);
+  }
+  
+  img{
+    
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  .submit{
+    color: rgb(30, 4, 51);
+    border-radius: 0.5rem;
+    width: 100%;
+    background-color: rgb(173, 204, 115);
+    outline: none;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+  }
+  
+  .page-container {
+    background-image: url('./paddy.jpg'); /* Use a relative path */ 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 160vh;
+    display: flex;
+    width: 215vh;
+  }
+  
+  .download-button{
+    color: rgb(30, 4, 51);
+    border-radius: 0.5rem;
+    width: 100%;
+    background-color: rgb(128, 108, 154);
+    outline: none;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+  }
+  .loading{
+    gap: 0.5rem;
+    width: 80px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .loading span{
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid wheat;
+    border-bottom: 0;
+    border-radius: 50%;
+    animation: _loading 1s linear infinite;
+    -webkit-animation: _loading 1s linear infinite;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+  
+  @keyframes loading {
+    0%{
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+    }
+  }
