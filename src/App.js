@@ -7,13 +7,12 @@ import Landprep from "./components/Landprep";
 
 function App() {
     return (
-
         <Router>
             <Routes>
                 <Route path="/login" element={<LoginBody/>}/>
+                <Route path="/card" element={<Card/>}/>
+                <Route path="/landPrep" element={<Landprep/>}/>
                 <Route path="/" element={<SignUp/>}/>
-                <Route path="/" element={<Card/>}/>
-                <Route path="/Landprep" element={<Landprep/>}/>
             </Routes>
         </Router>
     );
