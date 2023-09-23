@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { InputLabel, Button} from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
+import '../styles/form.css';
 
 
 const Card = () => {

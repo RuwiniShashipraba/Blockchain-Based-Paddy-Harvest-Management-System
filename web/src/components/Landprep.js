@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { InputLabel} from '@material-ui/core';
 import { useNavigate, useLocation  } from 'react-router-dom';
+import '../styles/form.css';
 
 const Landprep = () => {
   const navigate = useNavigate();

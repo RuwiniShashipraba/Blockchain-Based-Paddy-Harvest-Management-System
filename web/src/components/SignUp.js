@@ -4,7 +4,9 @@ import {eyeOff} from 'react-icons-kit/feather/eyeOff'
 import {eye} from 'react-icons-kit/feather/eye'
 import { useNavigate } from 'react-router-dom';
 import {Button} from '@material-ui/core';
-import '../sign.css';
+import '../styles/sign.css';
+import '../styles/form.css';
+
 const SignUp = () => {
   const [fullName, setFullName] = useState("");
   const [uaddress, setuAddress] = useState("");
@@ -213,7 +215,7 @@ const SignUp = () => {
           </form>
           <div class="label-container">
           <label>Have an Account? </label>
-          <a href="/Card">
+          <a href="/login">
           <label1>Login Here</label1>
           </a>
           </div>
