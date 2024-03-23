@@ -1,0 +1,582 @@
+{
+	"abi":[
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "_name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_faddress",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_year",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_cropSeason",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_culArea",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_zone",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_seed",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_weightpadddy",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_farmselprice",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_totalCost",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_costPerKg",
+					"type": "string"
+				}
+			],
+			"name": "addFarmerDetails",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "_name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_mAddress",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_cost",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_riceWeight",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_costPerKg",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_sellprice",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "_exp",
+					"type": "string"
+				}
+			],
+			"name": "addMillerDetails",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "farmerAddress",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "fullName",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "faddress",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "year",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "cropSeason",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "culArea",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "zone",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "seed",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "weightpadddy",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "farmselprice",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "totalCost",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "costPerKg",
+					"type": "string"
+				}
+			],
+			"name": "FarmerDetailsAdded",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "millerAddress",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "mfullName",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "mAddress",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "cost",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "riceweight",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "costPerKg",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "sellprice",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "exp",
+					"type": "string"
+				}
+			],
+			"name": "MillerDetailsAdded",
+			"type": "event"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "farmerList",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"name": "farmersByName",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "fullName",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "faddress",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "year",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "cropSeason",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "culArea",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "zone",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "seed",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "weightpadddy",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "farmselprice",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "totalCost",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "costPerKg",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "index",
+					"type": "uint256"
+				}
+			],
+			"name": "getFarmerAddress",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getFarmerCount",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "getFarmerDetailsByName",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "index",
+					"type": "uint256"
+				}
+			],
+			"name": "getMillerAddress",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getMillerCount",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "getMillerDetailsByName",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "millerList",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"name": "millersByName",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "fullName",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "mAddress",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "cost",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "riceWeight",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "costPerKg",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "sellprice",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "exp",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}

@@ -1,0 +1,76 @@
+/* farmerDetailsViewer.css */
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Heading styles */
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Label styles */
+  label {
+    font-weight: bold;
+  }
+  
+  /* Input styles */
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Button styles */
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Loading message styles */
+  .loading-message {
+    margin-top: 10px;
+    font-style: italic;
+  }
+  
+  /* Error message styles */
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  /* Farmer details container styles */
+  .farmer-details-container {
+    margin-top: 20px;
+  }
+  
+  /* QR code container styles */
+  .qr-code-container {
+    margin-top: 20px;
+  }
+  
+  /* QR code image styles */
+  .qr-code-image {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
+  /* Download button container styles */
+  .download-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
