@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Service from './Service';
-
+import React, { useState } from "react";
+import Service from "./Service";
+// import "../../styles/card.css";
 function ServiceSection() {
   const [selectedService, setSelectedService] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
@@ -16,7 +16,7 @@ function ServiceSection() {
 
   return (
     <div>
-      <div className="service-section">
+      <div className="service-section" id="service">
         <div className="benefits-section">
           <Service
             title="Increased Transparency"
@@ -54,4 +54,3 @@ function ServiceSection() {
 }
 
 export default ServiceSection;
-
