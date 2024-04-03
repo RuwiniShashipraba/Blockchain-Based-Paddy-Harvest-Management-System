@@ -12,7 +12,7 @@
   }
   
   .form {
-    background-color: rgb(198, 213, 98);
+    background-color: rgb(251, 251, 250);
     color: rgb(2, 2, 40);
     text-align: center;
     gap: 1rem;
@@ -33,7 +33,7 @@
     color: rgb(30, 4, 51);
     border-radius: 0.5rem;
     width: 100%;
-    background-color: rgb(173, 204, 115);
+    background-color: rgb(251, 251, 251);
     outline: none;
     border: none;
     padding: 0.8rem, 1rem;
@@ -58,7 +58,7 @@
   
   input.input.ReactDatePicker {
     width: 200%;
-    background-color: rgb(173, 204, 115);
+    background-color: rgb(255, 255, 255);
     color: rgb(30, 4, 51);
     border-radius: 0.5rem;
     outline: none;

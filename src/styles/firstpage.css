@@ -172,15 +172,6 @@ button {
   cursor: pointer;
 }
 
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
 .who-we-are-section,
 p {
   margin-left: 1%;
@@ -221,4 +212,13 @@ h3 {
 .contact-section ul li:first-child::after {
   content: "|"; /* Add separator between email and phone */
   margin: 0 10px; /* Adjust space around separator */
+}
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

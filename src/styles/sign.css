@@ -7,25 +7,30 @@
   margin-left: 5%;
 }
 h2 {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
   color: hsl(128, 49%, 25%);
-  padding: 20px;
+  padding: 5px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .image img {
-  width: 40vw;
-  max-width: none;
+  width: 38vw;
+  /* max-width: none; */
   display: block;
   height: 90vh;
-  background-color: #45ca45;
-  background-image: url("../img/signup.png");
+  /* background-color: #f0f5f0; */
+  background-image: url("../img/seller.jpg");
   background-repeat: no-repeat;
   display: flex;
   background-position: center center;
-  margin-left: 10%;
-  margin-top: 2%;
+  margin-left: -2%;
+  margin-top: 7%;
+  object-fit: contain;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2%;
+  border: 1px solid white;
+  border-radius: 2rem;
 }
 
 .form-container {
@@ -36,8 +41,8 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 720px;
-  height: 600px;
+  width: 35vw;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,16 +52,18 @@ h2 {
 .formdetails {
   border: 1px solid white;
   border-radius: 2rem;
-  margin-top: 10px;
+  margin-top: 2%;
   padding: 20px;
-  width: 400px;
+  width: 30vw;
+  height: 90vh;
+  min-width: 30vw;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+  margin-bottom: 2%;
 }
 
 .form-group {
   margin-bottom: 1rem;
-  margin-top: 20px;
+  margin-top: 2%;
 }
 
 .input {
@@ -75,16 +82,17 @@ h2 {
 }
 
 .submit-button {
-  color: white;
+  color: rgb(53, 62, 236);
   width: 100%;
-  background-color: rgb(48, 10, 95);
+  background-color: rgb(27, 14, 174);
   outline: none;
   border: none;
   padding: 1rem;
   cursor: pointer;
   width: auto;
   border-radius: 0.5rem;
-  margin-top: 20px;
+  /* margin-top: 25px; */
+  margin-bottom: 2%;
 }
 
 .form-header {
@@ -92,7 +100,7 @@ h2 {
 }
 
 .error {
-  color: red;
+  color: rgba(184, 53, 53, 0.702);
   font-weight: bold;
 }
 
@@ -122,5 +130,25 @@ label1 {
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
+} */
+@media screen and (max-width: 768px) {
+  /* Adjust styles for tablet-sized screens */
+  .image img {
+    display: none;
+  }
+
+  .form-container {
+    width: 80vw; /* Adjust width for tablet screens */
+    align-items: center;
+    margin-left: -9%;
+
+    height: auto; /* Remove fixed height for better responsiveness */
+  }
+
+  .formdetails {
+    width: 80vw; /* Adjust width for tablet screens */
+    height: auto; /* Remove fixed height for better responsiveness */
+    min-width: auto; /* Remove min-width for better responsiveness */
+  }
 }
