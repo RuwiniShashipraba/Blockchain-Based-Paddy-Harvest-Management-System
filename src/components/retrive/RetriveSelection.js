@@ -4,6 +4,8 @@ import "../../styles/retrive.css";
 import customerImage from "../../img/customer.jpg";
 import sellerImage from "../../img/seller.jpg";
 import RetrievePage from './Retrive';
+import Footer from '../FrontPage/Footer';
+import NavigationBar from '../FrontPage/NavigationBar';
 
 function RetriveSelection() {
   const navigate = useNavigate();
@@ -14,6 +16,8 @@ function RetriveSelection() {
   };
 
   return (
+    <div>
+      <NavigationBar/>
     <div className="retrive-section">
       <div className="selectretrive-section">
       <div className="row">
@@ -59,6 +63,8 @@ function RetriveSelection() {
         </div>
         
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 }

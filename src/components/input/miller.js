@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import "../../styles/miller.css";
 import FarmerDetailsContract from "../../contracts/FarmerDetails.json";
+import NavigationBar from '../FrontPage/NavigationBar';
+import Footer from '../FrontPage/Footer';
 
 const MillerDetailsForm = () => {
     const [web3, setWeb3] = useState(null);
@@ -78,6 +80,7 @@ const MillerDetailsForm = () => {
 
     return (
         <div>
+            <NavigationBar/>
             <h2>Add Miller Details</h2>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -111,6 +114,7 @@ const MillerDetailsForm = () => {
                 <button type="submit">Submit</button>
             </form>
             {errorMessage && <p>{errorMessage}</p>}
+            <Footer/>
         </div>
     );
 };
