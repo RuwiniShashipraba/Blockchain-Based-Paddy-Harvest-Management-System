@@ -52,10 +52,10 @@ h2 {
 .formdetails {
   border: 1px solid white;
   border-radius: 2rem;
-  margin-top: 2%;
+  margin-top: 4%;
   padding: 20px;
   width: 30vw;
-  height: 90vh;
+  height: 85vh;
   min-width: 30vw;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   margin-bottom: 2%;
@@ -75,7 +75,7 @@ h2 {
   display: inline-block;
   font-size: 1.2rem;
   /* height: 30px; */
-  height: 5vh;
+  height: 4vh;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   border-radius: 0;
@@ -96,7 +96,7 @@ h2 {
 }
 
 .form-header {
-  margin-top: 2%;
+  margin-top: -1%;
 }
 
 .error {
@@ -107,7 +107,7 @@ h2 {
 .position {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 2%;
 }
 
 .position label {
@@ -147,7 +147,7 @@ label1 {
   }
 
   .formdetails {
-    width: 80vw; /* Adjust width for tablet screens */
+    width: 85vw; /* Adjust width for tablet screens */
     height: auto; /* Remove fixed height for better responsiveness */
     min-width: auto; /* Remove min-width for better responsiveness */
   }

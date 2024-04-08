@@ -13,6 +13,8 @@ nav {
   padding: 10px;
   position: fixed;
   width: 100%;
+
+  /* z-index: 1000; */
 }
 
 nav ul {
@@ -214,11 +216,12 @@ h3 {
   margin: 0 10px; /* Adjust space around separator */
 }
 footer {
-  background-color: #333;
+  background-color:#0a7234;
   color: white;
   text-align: center;
   padding: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 1000;
 }
