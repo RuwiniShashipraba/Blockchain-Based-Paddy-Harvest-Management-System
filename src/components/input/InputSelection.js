@@ -26,7 +26,7 @@ function InputSelection() {
           />
         </div>
 
-        <div className="input-box" onClick={() => navigate("/miller-page")}>
+        <div className="input-box" onClick={() => navigate("/seller-form")}>
           <InputPage
             title="Seller Details"
             description="Build trust in the rice supply chain by ensuring the authenticity and quality"
