@@ -10,6 +10,7 @@ import Farmer from './components/input/farmer.js';
 import MillerDetailsForm from './components/input/miller.js';
 import FarmerRet from './components/retrive/FarmerRet.js';
 import MillerDetailsViewer from './components/retrive/millerRet.js';
+import SellerDetailsForm from './components/input/seller.js';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/farmer-ret' element={<FarmerRet/>} />
                 <Route path='/miller-ret' element={<MillerDetailsViewer/>} />
                 <Route path='/miller-form' element={<MillerDetailsForm/>} />
+                <Route path='/seller-form' element={<SellerDetailsForm/>}/>
 
             </Routes>
         </Router>
