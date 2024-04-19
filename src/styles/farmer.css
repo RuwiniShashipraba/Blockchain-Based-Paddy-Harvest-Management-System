@@ -24,8 +24,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 50vh; /* Adjusted margin-top */
-}
+    /* margin-top: -1vh;  */
+    
+  }
 
 
   
@@ -88,9 +89,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 160vh;
+    height: 100vh;
     display: flex;
-    width: 215vh;
+    width: 15vh;
   }
   
   .download-button{
