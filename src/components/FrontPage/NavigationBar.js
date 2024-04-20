@@ -7,21 +7,27 @@ function NavigationBar() {
     <nav>
       <ul>
         <li>
-          <Link to="/#Home">Home</Link>
+          {/* <Link to="/#Home">Home</Link> */}
+          <a href="#Home">Home</a>
         </li>
         {/* <li>Benefits</li> */}
         <li>
-          <Link to="/#Service">Benefits</Link>
+          {/* <Link to="/#Service">Benefits</Link> */}
+          <a href="#Service">Benefits</a>
         </li>
         {/* <li>About</li> */}
         <li>
-          <Link to="/#About">About</Link>
+          {/* <Link to="/#About">About</Link> */}
+          <a href="#About">About</a>
         </li>
         {/* <li>Contact</li> */}
         <li>
-          <Link to="/#Contact">Contact</Link>
+          {/* <Link to="/#Contact">Contact</Link> */}
+          <a href="/#Contact">Contact</a>
         </li>
-        <li>Profile</li>
+        <li>
+          <a href="/#Profile">Profile</a>
+        </li>
       </ul>
     </nav>
   );
