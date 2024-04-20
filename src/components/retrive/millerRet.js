@@ -7,7 +7,7 @@ import QRCode from 'qrcode.react'; // Import QRCode component
 const MillerDetailsViewer = () => {
     const [web3, setWeb3] = useState(null);
     const [contract, setContract] = useState(null);
-    const [farmerName, setFarmerName] = useState('');
+    const [millerName, setMillerName] = useState('');
     const [retrievedDetails, setRetrievedDetails] = useState(null);
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -37,22 +37,22 @@ const MillerDetailsViewer = () => {
 
     // Function to handle input change
     const handleInputChange = (e) => {
-        setFarmerName(e.target.value);
+        setMillerName(e.target.value);
     };
 
     // Function to retrieve farmer details
-    const retrieveFarmerDetails = async () => {
-        if (!contract || !farmerName) return;
+    const retrieveMillerDetails = async () => {
+        if (!contract || !millerName) return;
     
         try {
             setLoading(true);
-            const details = await contract.methods.getFarmerDetailsByName(farmerName).call();
+            const details = await contract.methods.getMillerDetailsByName(millerName).call();
 
             setRetrievedDetails(details);
             setErrorMessage('');
         } catch (error) {
-            console.error('Error retrieving farmer details:', error);
-            setErrorMessage('Error retrieving farmer details');
+            console.error('Error retrieving miller details:', error);
+            setErrorMessage('Error retrieving miller details');
         } finally {
             setLoading(false);
         }
@@ -63,13 +63,11 @@ const MillerDetailsViewer = () => {
         if (!retrievedDetails) return '';
         const formattedDetails = `
             Full Name: ${retrievedDetails[0]}
-            Year: ${retrievedDetails[2]}
-            Crop Season: ${retrievedDetails[3]}
-            Seed: ${retrievedDetails[6]}
-            Weight: ${retrievedDetails[7]}
-            Price: ${retrievedDetails[8]}
-            Total Cost: ${retrievedDetails[9]}
-            Cost Per Kg: ${retrievedDetails[10]}
+            Cost: ${retrievedDetails[2]}
+            Rice Weight: ${retrievedDetails[3]}
+            Cost per kg: ${retrievedDetails[4]}
+            Sell Price: ${retrievedDetails[5]}
+            EXP: ${retrievedDetails[6]}
         `;
         return formattedDetails;
     };
@@ -88,23 +86,22 @@ const MillerDetailsViewer = () => {
 
     return (
         <div>
-            <h2>Retrieve Farmer Details</h2>
-            <label>Enter Farmer Name:</label>
-            <input type="text" value={farmerName} onChange={handleInputChange} />
-            <button onClick={retrieveFarmerDetails}>Retrieve Details</button>
+            <h2>Retrieve Miller Details</h2>
+            <label>Enter Miller Name:</label>
+            <input type="text" value={millerName} onChange={handleInputChange} />
+            <button onClick={retrieveMillerDetails}>Retrieve Details</button>
             {loading && <p>Loading...</p>}
             {errorMessage && <p>{errorMessage}</p>}
             {retrievedDetails && (
                 <div>
-                    <h3>Farmer Details</h3>
+                    <h3>Miller Details</h3>
                     <p><strong>Full Name:</strong> {retrievedDetails[0]}</p>
-                    <p><strong>Year:</strong> {retrievedDetails[2]}</p>
-                    <p><strong>Crop Season:</strong> {retrievedDetails[3]}</p>
-                    <p><strong>Seed:</strong> {retrievedDetails[6]}</p>
-                    <p><strong>Weight:</strong> {retrievedDetails[7]}</p>
-                    <p><strong>Price:</strong> {retrievedDetails[8]}</p>
-                    <p><strong>Total Cost:</strong> {retrievedDetails[9]}</p>
-                    <p><strong>Cost Per Kg:</strong> {retrievedDetails[10]}</p>
+                    <p><strong>Cost:</strong> {retrievedDetails[2]}</p>
+                    <p><strong>Rice Weight:</strong> {retrievedDetails[3]}</p>
+                    <p><strong>Cost perkg:</strong> {retrievedDetails[4]}</p>
+                    <p><strong>Sell Price:</strong> {retrievedDetails[5]}</p>
+                    <p><strong>EXP:</strong> {retrievedDetails[6]}</p>
+                    
                     
                     <QRCode value={formatDetailsForQRCode()} />
                     <button onClick={handleDownloadQRCode}>Download QR Code</button>
@@ -120,4 +117,3 @@ const MillerDetailsViewer = () => {
 };
 
 export default MillerDetailsViewer;
-
