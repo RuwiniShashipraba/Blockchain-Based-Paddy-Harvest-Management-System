@@ -16,7 +16,7 @@ function ServiceSection() {
 
   return (
     <div>
-      <div className="service-section" id="service">
+      <div className="service-section" id="Service">
         <div className="benefits-section">
           <Service
             title="Increased Transparency"
