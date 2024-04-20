@@ -73,7 +73,7 @@ const SellerDetailsForm = () => {
       }
 
       await contract.methods
-        .addMillerDetails(
+        .addSellerDetails(
           name,
           mAddress,
 
@@ -89,11 +89,11 @@ const SellerDetailsForm = () => {
       setBuyingPrice("");
 
       setErrorMessage("");
-      alert("Miller details added successfully!");
+      alert("Seller details added successfully!");
     } catch (error) {
-      console.error("Error adding Miller details:", error);
+      console.error("Error adding Seller details:", error);
       setErrorMessage(
-        "Error adding Miller details. Please check the console for more information."
+        "Error adding Seller details. Please check the console for more information."
       );
     }
   };
