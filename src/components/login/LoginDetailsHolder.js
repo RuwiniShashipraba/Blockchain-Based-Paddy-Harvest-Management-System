@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/Login.css";
-import "../sign/SignUp.js";
 import { Button, TextField, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useNavigate } from "react-router-dom";
-
+import { initializeApp } from "firebase/app"; // Import initializeApp from Firebase
+import "firebase/auth"; // Import Firebase authentication module
 
 const useStyles = makeStyles((theme) => ({
   loginDetailsHolder: {
@@ -16,14 +16,40 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     width: "100%",
   },
-  verticalLine: {
-    width: "100%",
-  },
 }));
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCJKSTqjn9C5go9ANiptLZ_BwkUpaCnUDA",
+  authDomain: "fyp-blockchain-36876.firebaseapp.com",
+  projectId: "fyp-blockchain-36876",
+  storageBucket: "fyp-blockchain-36876.appspot.com",
+  messagingSenderId: "229064253194",
+  appId: "1:229064253194:web:32a9bc5a1626cc5f6724f3"
+};
+
+// Initialize Firebase app
+const app = initializeApp(firebaseConfig);
 
 function LoginDetailsHolder() {
   const classes = useStyles();
   const navigate = useNavigate();
+  const [email, setEmail] = useState(""); // State for email
+  const [password, setPassword] = useState(""); // State for password
+
+  const loginWithEmailAndPassword = async () => {
+    try {
+      // Import auth from the initialized app
+      const { getAuth, signInWithEmailAndPassword } = require("firebase/auth");
+      const auth = getAuth(app);
+      await signInWithEmailAndPassword(auth, email, password);
+      // Login successful
+      navigate("/optionSelection"); // Redirect to option selection page after login
+    } catch (error) {
+      // Handle errors here, for example, displaying error messages
+      console.error("Error logging in:", error.message);
+    }
+  };
 
   return (
     <div className={classes.loginDetailsHolder}>
@@ -37,6 +63,8 @@ function LoginDetailsHolder() {
           label="Email Address"
           placeholder="Enter your email address"
           fullWidth
+          value={email}
+          onChange={(e) => setEmail(e.target.value)} // Update email state
         />
       </div>
 
@@ -46,6 +74,8 @@ function LoginDetailsHolder() {
           label="Password"
           placeholder="Enter your password"
           fullWidth
+          value={password}
+          onChange={(e) => setPassword(e.target.value)} // Update password state
         />
       </div>
 
@@ -53,7 +83,7 @@ function LoginDetailsHolder() {
         variant="contained"
         color="primary"
         className={classes.inputContainer}
-        onClick={() => navigate("/optionSelection")}
+        onClick={loginWithEmailAndPassword}
       >
         Login
       </Button>
