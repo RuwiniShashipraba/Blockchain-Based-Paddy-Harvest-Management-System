@@ -4,9 +4,24 @@ import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import { initializeApp } from "firebase/app"; // Import initializeApp from Firebase
+import "firebase/auth"; // Import Firebase authentication module
 import "../../styles/sign.css";
 import Footer from "../FrontPage/Footer";
 import NavigationBar from "../FrontPage/NavigationBar";
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCJKSTqjn9C5go9ANiptLZ_BwkUpaCnUDA",
+  authDomain: "fyp-blockchain-36876.firebaseapp.com",
+  projectId: "fyp-blockchain-36876",
+  storageBucket: "fyp-blockchain-36876.appspot.com",
+  messagingSenderId: "229064253194",
+  appId: "1:229064253194:web:32a9bc5a1626cc5f6724f3"
+};
+
+// Initialize Firebase app
+const app = initializeApp(firebaseConfig);
 
 const SignUp = () => {
   const [fullName, setFullName] = useState("");
@@ -18,10 +33,7 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false); // Initialize as false
   const [selectedRole, setSelectedRole] = useState("");
   const [check, setCheck] = useState(false);
-
-  const handleChange = (data) => {
-    console.log(data);
-  };
+  const navigate = useNavigate();
 
   const isValidEmail = (email) => {
     // Simple email validation using a regular expression
@@ -41,7 +53,19 @@ const SignUp = () => {
     }
   };
 
-  const navigate = useNavigate();
+  const signUpWithEmailAndPassword = async () => {
+    try {
+      // Import auth from the initialized app
+      const { getAuth, createUserWithEmailAndPassword } = require("firebase/auth");
+      const auth = getAuth(app);
+      await createUserWithEmailAndPassword(auth, email, password);
+      // Sign up successful
+      navigate("/login"); // Redirect to login page after signup
+    } catch (error) {
+      // Handle errors here, for example, displaying error messages
+      console.error("Error signing up:", error.message);
+    }
+  };
 
   const isFormValid = () => {
     return (
@@ -57,20 +81,19 @@ const SignUp = () => {
   };
 
   const navigateToNext = () => {
-    navigate("/login");
+    if (isFormValid()) {
+      signUpWithEmailAndPassword();
+    }
   };
 
   return (
     <div>
-      <NavigationBar/>
+      <NavigationBar />
       <div className="container">
         <div className="image">
           <img />
         </div>
         <div className="form-container">
-          {/* <div className="form-header">
-          <h2>Let's Create an Account</h2>
-        </div> */}
           <form>
             <div className="formdetails">
               <div className="form-group">
@@ -226,15 +249,9 @@ const SignUp = () => {
               </div>
             </div>
           </form>
-          {/* <div class="label-container">
-          <label>Have an Account? </label>
-          <a href="/login">
-            <label1>Login Here</label1>
-          </a>
-        </div> */}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
