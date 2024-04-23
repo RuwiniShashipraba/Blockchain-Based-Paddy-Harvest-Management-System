@@ -160,57 +160,12 @@
           },
           {
             "internalType": "string",
-            "name": "market",
+            "name": "buyingPrice",
             "type": "string"
           },
           {
             "internalType": "string",
-            "name": "productType",
-            "type": "string"
-          }
-        ],
-        "internalType": "struct CombinedContract.SellerInput",
-        "name": "sellerInput",
-        "type": "tuple"
-      }
-    ],
-    "name": "addSellerRecord",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "uniqueId",
-        "type": "string"
-      },
-      {
-        "components": [
-          {
-            "internalType": "string",
-            "name": "uniqueId",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "sellerId",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "sellerName",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "market",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "productType",
+            "name": "sellingPrice",
             "type": "string"
           }
         ],
@@ -386,12 +341,12 @@
           },
           {
             "internalType": "string",
-            "name": "market",
+            "name": "buyingPrice",
             "type": "string"
           },
           {
             "internalType": "string",
-            "name": "productType",
+            "name": "sellingPrice",
             "type": "string"
           }
         ],
@@ -806,12 +761,12 @@
           },
           {
             "internalType": "string",
-            "name": "market",
+            "name": "buyingPrice",
             "type": "string"
           },
           {
             "internalType": "string",
-            "name": "productType",
+            "name": "sellingPrice",
             "type": "string"
           }
         ],
@@ -852,12 +807,12 @@
           },
           {
             "internalType": "string",
-            "name": "market",
+            "name": "buyingPrice",
             "type": "string"
           },
           {
             "internalType": "string",
-            "name": "productType",
+            "name": "sellingPrice",
             "type": "string"
           }
         ],
@@ -986,6 +941,176 @@
           }
         ],
         "internalType": "struct CombinedContract.MillerInput[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "uniqueId",
+        "type": "string"
+      }
+    ],
+    "name": "getRecordsByUniqueId",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "millerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "millerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "productionCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "riceWeight",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "expiryDate",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "manufactureDate",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "buyingPrice",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.MillerInput[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fullName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fAddress",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "year",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "cropSeason",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "culArea",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "zone",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "seed",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "weightPaddy",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerSellPrice",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "totalCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.FarmerInput[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "buyingPrice",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellingPrice",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.SellerInput[]",
         "name": "",
         "type": "tuple[]"
       }
@@ -1184,12 +1309,12 @@
       },
       {
         "internalType": "string",
-        "name": "market",
+        "name": "buyingPrice",
         "type": "string"
       },
       {
         "internalType": "string",
-        "name": "productType",
+        "name": "sellingPrice",
         "type": "string"
       }
     ],

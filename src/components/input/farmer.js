@@ -47,7 +47,7 @@ const Farmer = () => {
 
             const gasLimit = 150000;
             const uniqueId = uuidv4()
-            const farmerId = "F001" //TODO: Get the ID of the farmer
+            const farmerId = "F002" //TODO: Get the ID of the farmer
 
             let weightFinal = weightpadddy.toString()
             let sellPriceFinal = farmselprice.toString()

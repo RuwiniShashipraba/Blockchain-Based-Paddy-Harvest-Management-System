@@ -34,7 +34,7 @@ const FarmerDetailsViewer = () => {
     }, [web3]);
 
     useEffect(() => {
-        const farmerId = 'F001'; // TODO: Get the actual farmer id
+        const farmerId = 'F002'; // TODO: Get the actual farmer id
         if (contract && farmerId) {
             retrieveDetails(farmerId);
         }

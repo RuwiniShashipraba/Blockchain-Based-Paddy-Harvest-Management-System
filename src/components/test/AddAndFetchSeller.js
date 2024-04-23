@@ -7,11 +7,16 @@ const AddAndFetchSeller = () => {
     const [web3, setWeb3] = useState(null);
     const [contract, setContract] = useState(null);
     const [accounts, setAccounts] = useState([]);
+
     const [sellerRecords, setSellerRecords] = useState([]);
     const [millerRecords, setMillerRecords] = useState([]);
     const [farmerRecords, setFarmerRecords] = useState([]);
-    const [uniqueId, setUniqueId] = useState(""); // Unique ID from Miller
-    const [sellerId, setSellerId] = useState(""); // Seller ID
+
+    const [uniqueId, setUniqueId] = useState("");
+    const [sellerId, setSellerId] = useState("");
+    const [sellerName, setSellerName] = useState("");
+    const [buyingPrice, setBuyingPrice] = useState("");
+    const [sellingPrice, setSellingPrice] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
@@ -65,22 +70,29 @@ const AddAndFetchSeller = () => {
                 uniqueId,
                 sellerId,
                 sellerName: "Super Sellers",
-                market: "Farmers Market",
-                productType: "Grains",
+                buyingPrice,
+                sellingPrice
             };
 
-            const gasEstimate = await contract.methods
-                .addSellerRecord(uniqueId, sellerInput)
-                .estimateGas({from: accounts[0]});
+            const accounts = await web3.eth.getAccounts();
+            if (accounts.length === 0) {
+                setErrorMessage(
+                    "No account found in MetaMask. Please make sure you have an Ethereum account connected."
+                );
+                return;
+            }
 
-            const tx = await web3.eth.sendTransaction({
+            const gasEstimate = await contract.methods.addSellerRecord(sellerInput).estimateGas({from: accounts[0]});
+            const encode = await contract.methods.addSellerRecord(sellerInput).encodeABI();
+
+            const receipt = await web3.eth.sendTransaction({
                 from: accounts[0],
                 to: COMBINED_CONTRACT_ADDRESS,
                 gas: gasEstimate,
-                data: contract.methods.addSellerRecord(uniqueId, sellerInput).encodeABI(),
+                data: encode,
             });
 
-            console.log("Transaction receipt:", tx);
+            console.log("Transaction receipt:", receipt);
             alert("Seller record stored on the blockchain successfully!");
         } catch (error) {
             console.error("Error storing seller record on the blockchain:", error);

@@ -10,14 +10,12 @@ import {COMBINED_CONTRACT_ADDRESS} from "../../constants";
 const SellerDetailsForm = () => {
     const [web3, setWeb3] = useState(null);
     const [contract, setContract] = useState(null);
+
+    const [uniqueId, setUniqueId] = useState("");
     const [name, setName] = useState("");
-    const [mAddress, setMAddress] = useState("");
-    //   const [cost, setCost] = useState("");
-    //   const [riceWeight, setRiceWeight] = useState("");
-    //   const [costPerKg, setCostPerKg] = useState("");
-    const [sellPrice, setSellPrice] = useState("");
     const [buyingPrice, setBuyingPrice] = useState("");
-    //   const [exp, setExp] = useState("");
+    const [sellPrice, setSellPrice] = useState("");
+
     const [errorMessage, setErrorMessage] = useState("");
 
     // Initialize Web3 and contract
@@ -63,6 +61,7 @@ const SellerDetailsForm = () => {
             return;
         }
 
+        const sellerId = "S001"
         try {
             const accounts = await web3.eth.getAccounts();
             if (accounts.length === 0) {
@@ -72,22 +71,31 @@ const SellerDetailsForm = () => {
                 return;
             }
 
-            await contract.methods
-                .addSellerDetails(
-                    name,
-                    mAddress,
+            const sellerInput = {
+                uniqueId,
+                sellerId,
+                sellerName: name,
+                buyingPrice,
+                sellPrice
+            };
 
-                    buyingPrice,
-                    sellPrice
-                )
-                .send({from: accounts[0]});
+            const gasEstimate = await contract.methods.addSellerRecord(sellerInput).estimateGas({from: accounts[0]});
+            const encode = await contract.methods.addSellerRecord(sellerInput).encodeABI();
+
+            const receipt = await web3.eth.sendTransaction({
+                from: accounts[0],
+                to: COMBINED_CONTRACT_ADDRESS,
+                gas: gasEstimate,
+                data: encode,
+            });
+
+            console.log('receipt - ', receipt)
+
             // Clear form fields after successful submission
             setName("");
-            setMAddress("");
-
+            setUniqueId("")
             setSellPrice("");
             setBuyingPrice("");
-
             setErrorMessage("");
             alert("Seller details added successfully!");
         } catch (error) {
@@ -105,6 +113,17 @@ const SellerDetailsForm = () => {
             <div className="page-container">
                 <form className="form">
                     <h1 className="title">Seller Details</h1>
+
+                    <InputLabel>Unique Id</InputLabel>
+                    <input
+                        type="text"
+                        className="input"
+                        value={uniqueId}
+                        onChange={(e) => setUniqueId(e.target.value)}
+                        required
+                        placeholder="Enter your Unique ID"
+                    />
+
                     <InputLabel>Full Name</InputLabel>
                     <input
                         type="text"
@@ -115,14 +134,14 @@ const SellerDetailsForm = () => {
                         placeholder="Enter your full name"
                     />
 
-                    <InputLabel>Address</InputLabel>
+                    <InputLabel>Buying Price</InputLabel>
                     <input
                         type="text"
                         className="input"
-                        value={mAddress}
-                        onChange={(e) => setMAddress(e.target.value)}
+                        value={buyingPrice}
+                        onChange={(e) => setBuyingPrice(e.target.value)}
                         required
-                        placeholder="Enter your address"
+                        placeholder="Enter the sell price"
                     />
 
                     <InputLabel>Sell Price</InputLabel>
@@ -131,15 +150,6 @@ const SellerDetailsForm = () => {
                         className="input"
                         value={sellPrice}
                         onChange={(e) => setSellPrice(e.target.value)}
-                        required
-                        placeholder="Enter the sell price"
-                    />
-                    <InputLabel>Buying Price</InputLabel>
-                    <input
-                        type="text"
-                        className="input"
-                        value={buyingPrice}
-                        onChange={(e) => setBuyingPrice(e.target.value)}
                         required
                         placeholder="Enter the sell price"
                     />

@@ -52,7 +52,7 @@ function RetriveSelection() {
           />
         </div>
 
-        <div className="retrive-box" onClick={() => navigate("/different-page")}>
+        <div className="retrive-box" onClick={() => navigate("/customer")}>
           <RetrievePage
             title="Customer Details"
             description="Description for a different option."

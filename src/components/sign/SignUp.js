@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Icon } from "react-icons-kit";
-import { eyeOff } from "react-icons-kit/feather/eyeOff";
-import { eye } from "react-icons-kit/feather/eye";
-import { useNavigate } from "react-router-dom";
-import { Button } from "@material-ui/core";
-import { initializeApp } from "firebase/app"; // Import initializeApp from Firebase
+import React, {useState} from "react";
+import {Icon} from "react-icons-kit";
+import {eyeOff} from "react-icons-kit/feather/eyeOff";
+import {eye} from "react-icons-kit/feather/eye";
+import {useNavigate} from "react-router-dom";
+import {Button} from "@material-ui/core";
+import {initializeApp} from "firebase/app"; // Import initializeApp from Firebase
 import "firebase/auth"; // Import Firebase authentication module
 import "../../styles/sign.css";
 import Footer from "../FrontPage/Footer";
@@ -58,8 +58,8 @@ const SignUp = () => {
       // Import auth from the initialized app
       const { getAuth, createUserWithEmailAndPassword } = require("firebase/auth");
       const auth = getAuth(app);
-      await createUserWithEmailAndPassword(auth, email, password);
-      // Sign up successful
+      const response = await createUserWithEmailAndPassword(auth, email, password);
+      console.log('response - ', response)
       navigate("/login"); // Redirect to login page after signup
     } catch (error) {
       // Handle errors here, for example, displaying error messages
