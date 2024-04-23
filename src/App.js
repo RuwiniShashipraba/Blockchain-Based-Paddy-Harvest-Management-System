@@ -1,34 +1,37 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Firstpage from './components/FrontPage/FrontPage.js';
-import LoginBody from './components/login/LoginBody.js';
-import SignUp from './components/sign/SignUp.js';
-import OptionSelection from './components/option/OptionSelection.js';
-import InputSelection from './components/input/InputSelection.js';
-import RetriveSelection from './components/retrive/RetriveSelection.js';
-import Farmer from './components/input/farmer.js';
-import MillerDetailsForm from './components/input/miller.js';
-import FarmerRet from './components/retrive/FarmerRet.js';
-import MillerDetailsViewer from './components/retrive/millerRet.js';
-import SellerDetailsForm from './components/input/seller.js';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import SellerDetailsForm from "./components/input/seller";
+import MillerDetailsForm from "./components/input/miller";
+import MillerDetailsViewer from "./components/retrive/millerRet";
+import FarmerRet from "./components/retrive/FarmerRet";
+import Farmer from "./components/input/farmer";
+import InputSelection from "./components/input/InputSelection";
+import RetriveSelection from "./components/retrive/RetriveSelection";
+import OptionSelection from "./components/option/OptionSelection";
+import SignUp from "./components/sign/SignUp";
+import LoginBody from "./components/login/LoginBody";
+import FrontPage from "./components/FrontPage/FrontPage";
 
 
 function App() {
     return (
         <Router>
             <Routes>
-                <Route path='/' element={<Firstpage />} />
-                <Route path="/login" element={<LoginBody />} />
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/optionselection" element={<OptionSelection />} />
-                <Route path='/inputselection' element={<InputSelection />} />
-                <Route path='/retrieveselection' element={<RetriveSelection />} />
-                <Route path='/farmer-page' element={<Farmer/>} />
-                <Route path='/farmer-ret' element={<FarmerRet/>} />
-                <Route path='/miller-ret' element={<MillerDetailsViewer/>} />
-                <Route path='/miller-form' element={<MillerDetailsForm/>} />
+                {/*<Route path="/" element={<Navigate to="/farmer" />} />*/}
+                {/*<Route path='/farmer' element={<AddAndFetchFarmer/>}/>*/}
+                {/*<Route path='/miller' element={<AddAndFetchMiller/>}/>*/}
+                {/*<Route path='/seller' element={<AddAndFetchSeller/>}/>*/}
+                <Route path='/' element={<FrontPage/>}/>
+                <Route path="/login" element={<LoginBody/>}/>
+                <Route path="/signup" element={<SignUp/>}/>
+                <Route path="/optionselection" element={<OptionSelection/>}/>
+                <Route path='/inputselection' element={<InputSelection/>}/>
+                <Route path='/retrieveselection' element={<RetriveSelection/>}/>
+                <Route path='/farmer-page' element={<Farmer/>}/>
+                <Route path='/farmer-ret' element={<FarmerRet/>}/>
+                <Route path='/miller-ret' element={<MillerDetailsViewer/>}/>
+                <Route path='/miller-form' element={<MillerDetailsForm/>}/>
                 <Route path='/seller-form' element={<SellerDetailsForm/>}/>
-
             </Routes>
         </Router>
     );

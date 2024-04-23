@@ -1,0 +1,1199 @@
+[
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fullName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fAddress",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "year",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "cropSeason",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "culArea",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "zone",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "seed",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "weightPaddy",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerSellPrice",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "totalCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.FarmerInput",
+        "name": "farmerInput",
+        "type": "tuple"
+      }
+    ],
+    "name": "addFarmerRecord",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "millerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "millerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "productionCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "riceWeight",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "expiryDate",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "manufactureDate",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "buyingPrice",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.MillerInput",
+        "name": "millerInput",
+        "type": "tuple"
+      }
+    ],
+    "name": "addMillerRecord",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "market",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "productType",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.SellerInput",
+        "name": "sellerInput",
+        "type": "tuple"
+      }
+    ],
+    "name": "addSellerRecord",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "uniqueId",
+        "type": "string"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "market",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "productType",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.SellerInput",
+        "name": "sellerInput",
+        "type": "tuple"
+      }
+    ],
+    "name": "addSellerRecord",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fullName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fAddress",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "year",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "cropSeason",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "culArea",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "zone",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "seed",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "weightPaddy",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerSellPrice",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "totalCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct CombinedContract.FarmerInput",
+        "name": "farmer",
+        "type": "tuple"
+      }
+    ],
+    "name": "FarmerRecordAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "millerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "millerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "productionCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "riceWeight",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "expiryDate",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "manufactureDate",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "buyingPrice",
+            "type": "string"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct CombinedContract.MillerInput",
+        "name": "miller",
+        "type": "tuple"
+      }
+    ],
+    "name": "MillerRecordAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "market",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "productType",
+            "type": "string"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct CombinedContract.SellerInput",
+        "name": "seller",
+        "type": "tuple"
+      }
+    ],
+    "name": "SellerRecordAdded",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "allFarmerRecords",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "uniqueId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "farmerId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "fullName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "fAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "cropSeason",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "culArea",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "zone",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "seed",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "weightPaddy",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "farmerSellPrice",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "totalCost",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "costPerKg",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "farmerRecords",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "uniqueId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "farmerId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "fullName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "fAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "cropSeason",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "culArea",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "zone",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "seed",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "weightPaddy",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "farmerSellPrice",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "totalCost",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "costPerKg",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "farmerId",
+        "type": "string"
+      }
+    ],
+    "name": "getFarmerRecords",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fullName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fAddress",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "year",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "cropSeason",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "culArea",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "zone",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "seed",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "weightPaddy",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerSellPrice",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "totalCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.FarmerInput[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "millerId",
+        "type": "string"
+      }
+    ],
+    "name": "getRecordsByMillerId",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "millerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "millerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "productionCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "riceWeight",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "expiryDate",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "manufactureDate",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "buyingPrice",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.MillerInput[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fullName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fAddress",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "year",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "cropSeason",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "culArea",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "zone",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "seed",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "weightPaddy",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerSellPrice",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "totalCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.FarmerInput[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "market",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "productType",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.SellerInput[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "sellerId",
+        "type": "string"
+      }
+    ],
+    "name": "getRecordsBySellerId",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "market",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "productType",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.SellerInput[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fullName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fAddress",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "year",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "cropSeason",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "culArea",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "zone",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "seed",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "weightPaddy",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "farmerSellPrice",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "totalCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.FarmerInput[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "uniqueId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "millerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "millerName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "productionCost",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "riceWeight",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "expiryDate",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "manufactureDate",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "costPerKg",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "buyingPrice",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct CombinedContract.MillerInput[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "isFarmerRegistered",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "isMillerRegistered",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "isSellerRegistered",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "millerKeys",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "millerRecords",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "uniqueId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "millerId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "millerName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "productionCost",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "riceWeight",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "expiryDate",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "manufactureDate",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "costPerKg",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "buyingPrice",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "sellerKeys",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "sellerRecords",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "uniqueId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "sellerId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "sellerName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "market",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "productType",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

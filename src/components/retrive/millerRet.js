@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import React, {useEffect, useState} from 'react';
 import Web3 from 'web3';
-import FarmerDetailsContract from "../../contracts/FarmerDetails.json";
+import CombinedContract from '../../contracts/CombinedContract.json';
+import {COMBINED_CONTRACT_ADDRESS} from '../../constants';
+import {Link} from 'react-router-dom';
 import QRCode from 'qrcode.react'; // Import QRCode component
 
 const MillerDetailsViewer = () => {
     const [web3, setWeb3] = useState(null);
     const [contract, setContract] = useState(null);
-    const [millerName, setMillerName] = useState('');
-    const [retrievedDetails, setRetrievedDetails] = useState(null);
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const [millerRecords, setMillerRecords] = useState([]);
+    const [farmerRecords, setFarmerRecords] = useState([]);
+    const [sellerRecords, setSellerRecords] = useState([]);
 
     // Initialize Web3 and contract
     useEffect(() => {
@@ -21,34 +23,36 @@ const MillerDetailsViewer = () => {
                 setWeb3(_web3);
             } else {
                 console.error('Please install MetaMask to use this application');
-            }                  
+            }
         };
         initWeb3();
     }, []);
 
     useEffect(() => {
         if (web3) {
-            // Load contract
-            const contractAddress = '0x189364e831d6f766fac878bccf6dbd2fc0dc54c8'; // Replace with your contract address
-            const deployedContract = new web3.eth.Contract(FarmerDetailsContract.abi, contractAddress);
+            const deployedContract = new web3.eth.Contract(CombinedContract, COMBINED_CONTRACT_ADDRESS);
             setContract(deployedContract);
         }
     }, [web3]);
 
-    // Function to handle input change
-    const handleInputChange = (e) => {
-        setMillerName(e.target.value);
-    };
+    useEffect(() => {
+        const millerId = 'M001';
+        if (millerId) {
+            retrieveMillerDetails(millerId);
+        }
+    }, [contract]);
 
-    // Function to retrieve farmer details
-    const retrieveMillerDetails = async () => {
-        if (!contract || !millerName) return;
-    
+    // Function to retrieve miller details
+    const retrieveMillerDetails = async (millerId) => {
+        if (!contract || !millerId) return;
+
         try {
             setLoading(true);
-            const details = await contract.methods.getMillerDetailsByName(millerName).call();
+            const response = await contract.methods.getRecordsByMillerId(millerId).call();
 
-            setRetrievedDetails(details);
+            setMillerRecords(response[0]);
+            setFarmerRecords(response[1]);
+            setSellerRecords(response[2]);
             setErrorMessage('');
         } catch (error) {
             console.error('Error retrieving miller details:', error);
@@ -59,26 +63,25 @@ const MillerDetailsViewer = () => {
     };
 
     // Format the retrieved details for QR code display
-    const formatDetailsForQRCode = () => {
-        if (!retrievedDetails) return '';
-        const formattedDetails = `
-            Full Name: ${retrievedDetails[0]}
-            Cost: ${retrievedDetails[2]}
-            Rice Weight: ${retrievedDetails[3]}
-            Cost per kg: ${retrievedDetails[4]}
-            Sell Price: ${retrievedDetails[5]}
-            EXP: ${retrievedDetails[6]}
-        `;
-        return formattedDetails;
+    const formatDetailsForQRCode = (record) => {
+        if (!record) return '';
+        return `Unique Id from QR: ${record.uniqueId}
+        Full Name: ${record.millerName}
+Production Cost: ${record.productionCost}
+Rice Weight: ${record.riceWeight}
+Expiry Date: ${record.expiryDate}
+Manufacture Date: ${record.manufactureDate}
+Cost per kg: ${record.costPerKg}
+Buying Price: ${record.buyingPrice}`;
     };
-    
-    // Function to handle downloading QR code
+
+    // Function to download QR code
     const handleDownloadQRCode = () => {
         const canvas = document.querySelector('canvas');
         const url = canvas.toDataURL('image/png');
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'farmer_details_qr.png';
+        link.download = 'miller_details_qr.png';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -86,31 +89,61 @@ const MillerDetailsViewer = () => {
 
     return (
         <div>
-            <h2>Retrieve Miller Details</h2>
-            <label>Enter Miller Name:</label>
-            <input type="text" value={millerName} onChange={handleInputChange} />
-            <button onClick={retrieveMillerDetails}>Retrieve Details</button>
-            {loading && <p>Loading...</p>}
-            {errorMessage && <p>{errorMessage}</p>}
-            {retrievedDetails && (
-                <div>
-                    <h3>Miller Details</h3>
-                    <p><strong>Full Name:</strong> {retrievedDetails[0]}</p>
-                    <p><strong>Cost:</strong> {retrievedDetails[2]}</p>
-                    <p><strong>Rice Weight:</strong> {retrievedDetails[3]}</p>
-                    <p><strong>Cost perkg:</strong> {retrievedDetails[4]}</p>
-                    <p><strong>Sell Price:</strong> {retrievedDetails[5]}</p>
-                    <p><strong>EXP:</strong> {retrievedDetails[6]}</p>
-                    
-                    
-                    <QRCode value={formatDetailsForQRCode()} />
-                    <button onClick={handleDownloadQRCode}>Download QR Code</button>
+            <h2>Miller Details</h2>
+            {loading ? (
+                <p>Loading...</p>
+            ) : (
+                <>
+                    {errorMessage && <p>{errorMessage}</p>}
+                    {millerRecords.length > 0 ? (
+                        millerRecords.map((record, index) => (
+                            <div key={index}>
+                                <h3>Record {index + 1}</h3>
+                                <p>Unique ID: {record.uniqueId}</p>
+                                <p>Miller Name: {record.millerName}</p>
+                                <p>Production Cost: {record.productionCost}</p>
+                                <p>Rice Weight: {record.riceWeight}</p>
+                                <p>Expiry Date: {record.expiryDate}</p>
+                                <p>Manufacture Date: {record.manufactureDate}</p>
+                                <p>Cost per kg: {record.costPerKg}</p>
+                                <p>Buying Price: {record.buyingPrice}</p>
+                                <h4>Associated Farmer Records:</h4>
+                                {farmerRecords.length > 0 ? (
+                                    farmerRecords.map((farmerRecord, i) => (
+                                        <div key={i}>
+                                            <p>Full Name: {farmerRecord.fullName}</p>
+                                            <p>Seed Type: {farmerRecord.seed}</p>
+                                            <p>Cost per kg: {farmerRecord.costPerKg}</p>
+                                            <p>Paddy Weight: {farmerRecord.weightPaddy}</p>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p>No associated farmer records found.</p>
+                                )}
+                                <h4>Associated Seller Records:</h4>
+                                {sellerRecords.length > 0 ? (
+                                    sellerRecords.map((sellerRecord, i) => (
+                                        <div key={i}>
+                                            <p>Seller Name: {sellerRecord.sellerName}</p>
+                                            <p>Buying Price: {sellerRecord.buyingPrice}</p>
+                                            <p>Selling Price: {sellerRecord.sellingPrice}</p>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p>No associated seller records found.</p>
+                                )}
+                                <QRCode value={formatDetailsForQRCode(record)}/>
+                                <button onClick={handleDownloadQRCode}>Download QR Code</button>
 
-                    {/* Add a Link for navigation */}
-                    <Link to="/miller-form">
-                        <button>Proceed</button>
-                    </Link>
-                </div>
+                                <Link to="/miller-form">
+                                    <button>Proceed</button>
+                                </Link>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No miller records found.</p>
+                    )}
+                </>
             )}
         </div>
     );
