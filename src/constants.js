@@ -9,3 +9,5 @@ export const FIREBASE_CONFIG = {
     appId: "1:403819669670:web:8fab97fe08828b7190ec67",
     measurementId: "G-JG5J97HEL6"
 }
+
+export const HOSTED_URL = "https://paddy-harvest.web.app"

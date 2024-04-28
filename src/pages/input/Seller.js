@@ -146,7 +146,7 @@ const SellerDetailsForm = () => {
                         value={buyingPrice}
                         onChange={(e) => setBuyingPrice(e.target.value)}
                         required
-                        placeholder="Enter the sell price"
+                        placeholder="Enter the buying price"
                     />
 
                     <InputLabel>Sell Price</InputLabel>

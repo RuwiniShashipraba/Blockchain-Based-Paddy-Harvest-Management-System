@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Web3 from 'web3';
 import CombinedContract from '../../contracts/CombinedContract.json';
-import {COMBINED_CONTRACT_ADDRESS} from '../../constants';
+import {COMBINED_CONTRACT_ADDRESS, HOSTED_URL} from '../../constants';
 import QRCode from 'qrcode.react';
 import NavigationBar from "../../components/frontPage/NavigationBar";
 import Footer from "../../components/frontPage/Footer";
@@ -66,14 +66,9 @@ const SellerDetailsViewer = () => {
     // Format the retrieved details for QR code display
     const formatDetailsForQRCode = (record) => {
         if (!record) return '';
-        return `Unique Id from QR: ${record.uniqueId}
-        Full Name: ${record.millerName}
-        Production Cost: ${record.productionCost}
-        Rice Weight: ${record.riceWeight}
-        Expiry Date: ${record.expiryDate}
-        Manufacture Date: ${record.manufactureDate}
-        Cost per kg: ${record.costPerKg}
-        Buying Price: ${record.buyingPrice}`;
+        return `
+        Unique Id from QR: ${record.uniqueId}
+        Site URL: ${HOSTED_URL}`;
     };
 
     // Function to download QR code
@@ -89,56 +84,58 @@ const SellerDetailsViewer = () => {
     };
 
     return (
-        <div>
+        <>
             <NavigationBar/>
-            <h2>Seller Details</h2>
-            {errorMessage && <p>{errorMessage}</p>}
-            {sellerRecords.length > 0 ? (
-                sellerRecords.map((record, index) => (
-                    <div key={index}>
-                        <h3>Record {index + 1}</h3>
-                        <p>Unique ID: {record.uniqueId}</p>
-                        <p>Seller Name: {record.sellerName}</p>
-                        <p>Buying Price: {record.buyingPrice}</p>
-                        <p>Selling Price: {record.sellingPrice}</p>
-                        <h4>Associated Farmer Records:</h4>
-                        {farmerRecords.length > 0 ? (
-                            farmerRecords.map((farmerRecord, i) => (
-                                <div key={i}>
-                                    <p>Full Name: {farmerRecord.fullName}</p>
-                                    <p>Seed Type: {farmerRecord.seed}</p>
-                                    <p>Cost per kg: {farmerRecord.costPerKg}</p>
-                                    <p>Paddy Weight: {farmerRecord.weightPaddy}</p>
-                                </div>
-                            ))
-                        ) : (
-                            <p>No associated farmer records found.</p>
-                        )}
-                        <h4>Associated Miller Records:</h4>
-                        {millerRecords.length > 0 ? (
-                            millerRecords.map((millerRecord, i) => (
-                                <div key={i}>
-                                    <p>Miller Name: {millerRecord.millerName}</p>
-                                    <p>Production Cost: {millerRecord.productionCost}</p>
-                                    <p>Rice Weight: {millerRecord.riceWeight}</p>
-                                    <p>Expiry Date: {millerRecord.expiryDate}</p>
-                                    <p>Manufacture Date: {millerRecord.manufactureDate}</p>
-                                    <p>Cost per kg: {millerRecord.costPerKg}</p>
-                                    <p>Buying Price: {millerRecord.buyingPrice}</p>
-                                </div>
-                            ))
-                        ) : (
-                            <p>No associated miller records found.</p>
-                        )}
-                        <QRCode value={formatDetailsForQRCode(record)}/>
-                        <button onClick={handleDownloadQRCode}>Download QR Code</button>
-                    </div>
-                ))
-            ) : (
-                <p>No Seller records found.</p>
-            )}
+            <div style={{marginTop: "10%", marginBottom: "10%"}}>
+                <h2>Seller Details</h2>
+                {errorMessage && <p>{errorMessage}</p>}
+                {sellerRecords.length > 0 ? (
+                    sellerRecords.map((record, index) => (
+                        <div key={index}>
+                            <h3>Record {index + 1}</h3>
+                            <p>Unique ID: {record.uniqueId}</p>
+                            <p>Seller Name: {record.sellerName}</p>
+                            <p>Buying Price: {record.buyingPrice}</p>
+                            <p>Selling Price: {record.sellingPrice}</p>
+                            <h4>Associated Farmer Records:</h4>
+                            {farmerRecords.length > 0 ? (
+                                farmerRecords.map((farmerRecord, i) => (
+                                    <div key={i}>
+                                        <p>Full Name: {farmerRecord.fullName}</p>
+                                        <p>Seed Type: {farmerRecord.seed}</p>
+                                        <p>Cost per kg: {farmerRecord.costPerKg}</p>
+                                        <p>Paddy Weight: {farmerRecord.weightPaddy}</p>
+                                    </div>
+                                ))
+                            ) : (
+                                <p>No associated farmer records found.</p>
+                            )}
+                            <h4>Associated Miller Records:</h4>
+                            {millerRecords.length > 0 ? (
+                                millerRecords.map((millerRecord, i) => (
+                                    <div key={i}>
+                                        <p>Miller Name: {millerRecord.millerName}</p>
+                                        <p>Production Cost: {millerRecord.productionCost}</p>
+                                        <p>Rice Weight: {millerRecord.riceWeight}</p>
+                                        <p>Expiry Date: {millerRecord.expiryDate}</p>
+                                        <p>Manufacture Date: {millerRecord.manufactureDate}</p>
+                                        <p>Cost per kg: {millerRecord.costPerKg}</p>
+                                        <p>Buying Price: {millerRecord.buyingPrice}</p>
+                                    </div>
+                                ))
+                            ) : (
+                                <p>No associated miller records found.</p>
+                            )}
+                            <QRCode value={formatDetailsForQRCode(record)}/>
+                            <button onClick={handleDownloadQRCode}>Download QR Code</button>
+                        </div>
+                    ))
+                ) : (
+                    <p>No Seller records found.</p>
+                )}
+            </div>
             <Footer/>
-        </div>
+        </>
     );
 };
 

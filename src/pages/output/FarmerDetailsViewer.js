@@ -74,7 +74,6 @@ const FarmerDetailsViewer = () => {
         if (!farmerDetails.length) return '';
         return `
       Record ID: ${record.uniqueId}
-      Farmer ID: ${record.farmerId}
       Full Name: ${record.fullName}
       Address: ${record.fAddress}
       Year: ${record.year}
@@ -103,7 +102,7 @@ const FarmerDetailsViewer = () => {
     return (
         <>
             <NavigationBar/>
-            <Container>
+            <Container style={{marginTop: "10%", marginBottom: "10%"}}>
                 <Typography variant="h2">Farmer Details</Typography>
                 {errorMessage && <Alert severity="error">{errorMessage}</Alert>}
                 {farmerDetails.length ? (
