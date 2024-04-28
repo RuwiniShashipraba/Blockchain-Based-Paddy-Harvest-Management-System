@@ -1,0 +1,27 @@
+[debug] [2024-04-28T18:40:20.079Z] ----------------------------------------------------------------------
+[debug] [2024-04-28T18:40:20.082Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-04-28T18:40:20.083Z] CLI Version:   13.7.4
+[debug] [2024-04-28T18:40:20.083Z] Platform:      win32
+[debug] [2024-04-28T18:40:20.083Z] Node Version:  v20.11.0
+[debug] [2024-04-28T18:40:20.083Z] Time:          Mon Apr 29 2024 00:10:20 GMT+0530 (India Standard Time)
+[debug] [2024-04-28T18:40:20.083Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-28T18:40:20.164Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-28T18:40:20.164Z] > authorizing via signed-in user (vishvis@sltc.ac.lk)
+[debug] [2024-04-28T18:40:20.165Z] [iam] checking project paddy-harvest for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-04-28T18:40:20.167Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/paddy-harvest:testIamPermissions [none]
+[debug] [2024-04-28T18:40:20.167Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/paddy-harvest:testIamPermissions x-goog-quota-user=projects/paddy-harvest
+[debug] [2024-04-28T18:40:20.167Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/paddy-harvest:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-04-28T18:40:21.856Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/paddy-harvest:testIamPermissions 200
+[debug] [2024-04-28T18:40:21.856Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/paddy-harvest:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-04-28T18:40:21.858Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/paddy-harvest [none]
+[debug] [2024-04-28T18:40:23.193Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/paddy-harvest 200
+[debug] [2024-04-28T18:40:23.193Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/paddy-harvest {"projectId":"paddy-harvest","projectNumber":"403819669670","displayName":"paddy-harvest","name":"projects/paddy-harvest","resources":{"hostingSite":"paddy-harvest"},"state":"ACTIVE","etag":"1_a0d0ccb2-f711-4c09-ab40-48299380939d"}
+[info] 
+[info] === Deploying to 'paddy-harvest'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2024-04-28T18:40:23.199Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/paddy-harvest:test [none]
+[debug] [2024-04-28T18:40:23.199Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/paddy-harvest:test [omitted]
