@@ -26,6 +26,10 @@ nav ul {
 nav li {
   cursor: pointer;
 }
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
 
 main {
   display: flex;
@@ -80,7 +84,7 @@ h4 {
 button {
   /* color: #000;*/
   /* background-color: rgb(56, 211, 120);
-  padding: '10px 20px', */
+    padding: '10px 20px', */
 
   padding: 10px 20px;
   font-size: 16px;
@@ -122,9 +126,11 @@ button {
   margin: 10px;
   margin-top: 5%;
 }
+
 .service:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect on hover */
 }
+
 .service-section > .benefits-section {
   display: flex;
   flex-direction: row; /* Display items vertically */
@@ -180,6 +186,7 @@ p {
 
   padding: 2%;
 }
+
 .who-we-are-section,
 p,
 h3 {
@@ -188,6 +195,7 @@ h3 {
 
 /* for contact us */
 .contact-section {
+  padding-bottom: 50px;
   text-align: center; /* Align content in the center */
 }
 
@@ -215,13 +223,14 @@ h3 {
   content: "|"; /* Add separator between email and phone */
   margin: 0 10px; /* Adjust space around separator */
 }
+
 footer {
-  background-color:#0a7234;
+  background-color: #0a7234;
   color: white;
   text-align: center;
   padding: 10px;
-  position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  z-index: 1000;
+  position: fixed;
 }

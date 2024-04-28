@@ -1,107 +1,105 @@
 * {
-  font-family: Inknut Antiqua, serif;
-  margin: 0;
-  padding: 0;
+    font-family: Inknut Antiqua, serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Layout Styles */
 .center-text {
-  text-align: center;
+    text-align: center;
 }
 
 .flex {
-  display: flex;
+    display: flex;
 }
 
 .column-direction {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .justify-center {
-  justify-content: center;
+    justify-content: center;
 }
 
 .justify-between {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .even-steven {
-  justify-content: space-evenly;
+    justify-content: space-evenly;
 }
 
 .align-center {
-  align-content: center;
+    align-content: center;
 }
 
 .self-center {
-  align-self: center;
+    align-self: center;
 }
 
 .w-60 {
-  flex-basis: 55%;
+    flex-basis: 55%;
 }
 
 .w-30 {
-  flex-basis: 40%;
+    flex-basis: 40%;
 }
 
 /* Card Styles */
 .card-styles {
-  margin-top: 10%;
-  background: #fff;
-  border-radius: 5%;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
-    drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-top: 10%;
+    background: #fff;
+    border-radius: 5%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 /* Typography Styles */
 .para-font-size {
-  font-size: 13px;
+    font-size: 13px;
 }
 
 .heading-font-size {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 /* Form Styles */
 input {
-  border-radius: 2%;
-  outline: none;
+    border-radius: 2%;
+    outline: none;
 }
 
 /* Padding Styles */
 .p-10 {
-  padding: 10%;
+    padding: 10%;
 }
 
 nav {
-  background-color: #0a7234;
-  color: white;
-  padding: 10px;
-  position: fixed;
-  width: 100%;
-  top: 0%;
-  left: 0%;
+    background-color: #0a7234;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
 }
 
 nav ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-around;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav li {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-footer {
-  background-color: #0a7234;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 1000;
-  left: 0;
-}
+/*footer {*/
+/*    background-color: #0a7234;*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    padding: 10px;*/
+/*    position: relative;*/
+/*    bottom: 0;*/
+/*    width: 100%;*/
+/*    left: 0;*/
+/*}*/

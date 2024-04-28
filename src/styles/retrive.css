@@ -3,14 +3,20 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding-bottom: 5%;
 }
 
 .selectretrive-section {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   width: 80%;
   height: 70vh;
-  margin-bottom: 10%;
+  margin-bottom: 2%;
+  /* margin-left: auto;
+  margin-right: auto;
+  align-items: center; */
+  align-items: center;
+  justify-content: center;
 }
 
 .retrive-box {
@@ -28,7 +34,9 @@
   margin: 2%;
   cursor: pointer;
   transition: border 0.3s ease;
-  /* margin-bottom: 10%; */
+  margin-left: auto;
+  margin-right: auto;
+    
 }
 
 .Retrive {
