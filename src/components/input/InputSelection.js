@@ -49,7 +49,7 @@ function InputSelection() {
               >
                 <InputPage
                   title="Miller Details"
-                  description="Description for another option2"
+                  // description="Description for another option2"
                   img={customerImage}
                   onClick={() => handleInputClick("Another Option")}
                 />
