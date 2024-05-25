@@ -1,13 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 import MainProvider from "./context/MainContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <MainProvider>
-        <App/>
-    </MainProvider>
+ReactDOM.render(
+  <MainProvider>
+    <App />
+  </MainProvider>,
+  document.getElementById("root")
 );
-

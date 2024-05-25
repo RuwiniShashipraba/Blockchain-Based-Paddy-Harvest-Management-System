@@ -1,16 +1,16 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Web3 from "web3";
-import {InputLabel} from "@material-ui/core";
+import { InputLabel } from "@material-ui/core";
 import "../../styles/miller.css";
 import CombinedContract from "../../contracts/CombinedContract.json";
 import NavigationBar from "../../components/frontPage/NavigationBar";
 import Footer from "../../components/frontPage/Footer";
-import {COMBINED_CONTRACT_ADDRESS} from "../../constants";
-import {MainContext} from "../../context/MainContext";
+import { COMBINED_CONTRACT_ADDRESS } from "../../constants";
+import { MainContext } from "../../context/MainContext";
 
 const SellerDetailsForm = () => {
 
-    const {userId, setIsLoading, userFullName} = useContext(MainContext)
+    const { userId, setIsLoading, userFullName } = useContext(MainContext)
     const [web3, setWeb3] = useState(null);
     const [contract, setContract] = useState(null);
 
@@ -19,7 +19,7 @@ const SellerDetailsForm = () => {
     const [buyingPrice, setBuyingPrice] = useState("");
     const [sellPrice, setSellPrice] = useState("");
 
-    const [errorMessage, setErrorMessage] = useState("");
+    const [setErrorMessage] = useState("");
 
     // Initialize Web3 and contract
     useEffect(() => {
@@ -82,7 +82,7 @@ const SellerDetailsForm = () => {
             };
 
             setIsLoading(true)
-            const gasEstimate = await contract.methods.addSellerRecord(sellerInput).estimateGas({from: accounts[0]});
+            const gasEstimate = await contract.methods.addSellerRecord(sellerInput).estimateGas({ from: accounts[0] });
             const encode = await contract.methods.addSellerRecord(sellerInput).encodeABI();
 
             const receipt = await web3.eth.sendTransaction({
@@ -112,7 +112,7 @@ const SellerDetailsForm = () => {
 
     return (
         <div>
-            <NavigationBar/>
+            <NavigationBar />
 
             <div className="page-container">
                 <form className="form" onSubmit={handleSubmit}>
@@ -163,7 +163,7 @@ const SellerDetailsForm = () => {
                 </form>
             </div>
 
-            <Footer/>
+            <Footer />
         </div>
     );
 };
