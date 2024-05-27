@@ -8,7 +8,7 @@ import NavigationBar from "../../components/frontPage/NavigationBar";
 const CustomerDetailsViewer = () => {
   const [web3, setWeb3] = useState(null);
   const [contract, setContract] = useState(null);
-  const [setAccounts] = useState([]);
+  const [accounts, setAccounts] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
 
   const [sellerRecords, setSellerRecords] = useState([]);
@@ -128,7 +128,7 @@ const CustomerDetailsViewer = () => {
 
           {sellerRecords.length > 0 && (
             <div>
-              <h2>Seller Records2</h2>
+              <h2>Seller Records</h2>
               {sellerRecords.map((record, index) => (
                 <div key={index} style={{ paddingBottom: "40px" }}>
                   <h3>Seller Record {index + 1}</h3>

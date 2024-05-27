@@ -64,6 +64,7 @@ const MillerDetailsViewer = () => {
       const response = await contract.methods
         .getRecordsByMillerId(millerId)
         .call();
+      console.log("response - ", response);
 
       setMillerRecords(response[0]);
       setFarmerRecords(response[1]);
